@@ -1,0 +1,16 @@
+<div *ngIf="author">
+    <mat-card>
+        <h2>Update dein Author</h2>
+        <form (ngSubmit)="onSubmit()" #form="ngForm" fxLayout="column">
+            <mat-form-field>
+                <input matInput type="text" name="first_name" ngModel [(ngModel)]="author.first_name" required
+                    placeholder="Vorname">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="text" name="last_name" ngModel [(ngModel)]="author.last_name" required
+                    placeholder="Nachname">
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+        </form>
+    </mat-card>
+</div>

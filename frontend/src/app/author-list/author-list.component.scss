@@ -1,0 +1,17 @@
+.authors-list {
+    margin: 20px 16px;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+
+        .footer {
+            margin-top: 20px;
+        }
+    }
+    a {
+        text-decoration: none;
+        // width: 200px;
+        margin: 5px
+    }
+}

@@ -1,0 +1,16 @@
+<div class="book-list" *ngIf="books$ | async as books">
+    <h1>Bücherliste</h1>
+    <div class="container" *ngIf="books" fxLayout="row">
+        <a [routerLink]="['/books', book._id]" *ngFor="let book of books">
+            <mat-card>
+                <h2>{{ book.name }}</h2>
+                <span>{{ book.isbn }}</span>
+                <div class="footer">
+                    <div>Erstellt am {{ book.createdAt | date:'dd.MM.yyyy'}}</div>
+                    <div>Aktualisiert am {{book.updatedAt | date:'dd.MM.yyyy'}}</div>
+                </div>
+            </mat-card>
+        </a>
+    </div>
+    <p *ngIf="books.length === 0">Empty</p>
+</div>

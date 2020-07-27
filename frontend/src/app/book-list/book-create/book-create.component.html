@@ -1,0 +1,20 @@
+<div>
+    <mat-card>
+        <h2>Erstelle ein neues Buch</h2>
+        <form (ngSubmit)="onSubmit(form)" #form="ngForm" fxLayout="column">
+            <mat-form-field>
+                <input matInput type="text" name="name" ngModel #name="ngModel" required placeholder="Name">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="text" name="isbn" ngModel #isbn="ngModel" required placeholder="ISBN">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="text" name="first_name" ngModel #first_name="ngModel" required placeholder="Vorname">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="text" name="last_name" ngModel #last_name="ngModel" required placeholder="Nachname">
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+        </form>
+    </mat-card>
+</div>

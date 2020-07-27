@@ -1,0 +1,16 @@
+<div class="authors-list" *ngIf="authors$ | async as authors">
+    <h1>Authorenliste</h1>
+    <div class="container" *ngIf="authors" fxLayout="row">
+        <a [routerLink]="['/authors', author._id]" *ngFor="let author of authors">
+            <mat-card>
+                <h2>{{ author.first_name }}</h2>
+                <span>{{ author.last_name }}</span>
+                <div class="footer">
+                    <div>Erstellt am {{ author.createdAt | date:'dd.MM.yyyy'}}</div>
+                    <div>Aktualisiert am {{author.updatedAt | date:'dd.MM.yyyy'}}</div>
+                </div>
+            </mat-card>
+        </a>
+    </div>
+    <p *ngIf="authors.length === 0">Empty</p>
+</div>

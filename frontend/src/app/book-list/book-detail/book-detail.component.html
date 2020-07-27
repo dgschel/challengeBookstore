@@ -1,0 +1,15 @@
+<div *ngIf="book$ | async as book">
+    <mat-card>
+        <h2>{{ book.name }}</h2>
+        <span>{{ book.isbn }}</span>
+        <mat-card-content>
+            <div>Erstellt von Author</div>
+            <div>{{ book.author.first_name}}</div>
+            <div>{{ book.author.last_name}}</div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <a [routerLink]="['edit']" mat-stroked-button>Edit</a>
+            <button type="button" mat-raised-button color="warn" (click)="onDelete(book)">Delete</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
